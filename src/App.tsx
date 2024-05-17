@@ -1,24 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Logo from './images/Logo';
+import Footer from './componentes/Footer';
+import { useState } from 'react';
+import Info from './componentes/info';
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`h-full flex flex-col p-10 items-center text-center gap-12 ${darkMode ? 'bg-sleep-mode text-white' : 'bg-white text-black'}`}>
+      <Logo darkMode={darkMode} setDarkMode={setDarkMode}/>
+      <Info darkMode={darkMode} />
+      <Footer darkMode={darkMode}  />
     </div>
   );
 }
