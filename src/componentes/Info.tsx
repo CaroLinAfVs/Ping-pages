@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 interface Props {
   darkMode: boolean;
+  onSubscribe: () => void;
 }
 
 const Info = (props: Props) => {
@@ -22,7 +23,7 @@ const Info = (props: Props) => {
     e.preventDefault();
     if (validarEmail(email)) {
       setEmailError('');
-      alert('Thanks for subscribing!'); // Muestra la alerta al suscribirse con éxito
+      props.onSubscribe(); // Llama a la función onSubscribe
       setEmail('');
     } else {
       setEmailError('Please add your email.');
@@ -32,9 +33,7 @@ const Info = (props: Props) => {
 
   return (
     <div
-      className={`w-[640px] flex flex-col items-center justify-center gap-4 ${
-        props.darkMode ? 'bg-sleep-mode text-white' : 'bg-white text-black'
-      }`}
+      className={`w-[640px] flex flex-col items-center justify-center gap-4 ${props.darkMode ? 'bg-sleep-mode text-white' : 'bg-white text-black'}`}
     >
       <h1 className="text-5xl text-icon-sun">
         We are launching{' '}
