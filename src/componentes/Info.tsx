@@ -23,7 +23,7 @@ const Info = (props: Props) => {
     e.preventDefault();
     if (validarEmail(email)) {
       setEmailError('');
-      props.onSubscribe(); // Llama a la función onSubscribe
+      props.onSubscribe(); 
       setEmail('');
     } else {
       setEmailError('Please add your email.');

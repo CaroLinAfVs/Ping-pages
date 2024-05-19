@@ -11,13 +11,21 @@ function App() {
   const handleSubscribe = () => {
     setShowNotification(true);
   };
-  
+
   return (
-    <div className={`h-full flex flex-col p-10 items-center text-center gap-12 ${darkMode ? 'bg-sleep-mode text-white' : 'bg-white text-black'}`}>
-      <Logo darkMode={darkMode} setDarkMode={setDarkMode}/>
-      <Info darkMode={darkMode} onSubscribe={handleSubscribe}/>
-      <Footer darkMode={darkMode}  />
-        <SuscriptionAdvice show={showNotification} onClose={() => setShowNotification(false)} darkMode={darkMode} />
+    <div
+      className={`h-full flex flex-col p-10 items-center text-center gap-12 ${
+        darkMode ? 'bg-sleep-mode text-white' : 'bg-white text-black'
+      }`}
+    >
+      <Logo darkMode={darkMode} setDarkMode={setDarkMode} />
+      <Info darkMode={darkMode} onSubscribe={handleSubscribe} />
+      <Footer darkMode={darkMode} />
+      <SuscriptionAdvice
+        show={showNotification}
+        onClose={() => setShowNotification(false)}
+        darkMode={darkMode}
+      />
     </div>
   );
 }
